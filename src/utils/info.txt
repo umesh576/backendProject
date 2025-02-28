@@ -1,0 +1,4 @@
+for bcryptjs  =>
+npm i --save-dev @types/bcryptjs
+
+multer pakage for track the image
