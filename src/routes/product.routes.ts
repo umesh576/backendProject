@@ -17,7 +17,20 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // create product image
-router.post("/", upload.single("coverImage"), create);
+router.post(
+  "/",
+  upload.fields([
+    {
+      name: "coverImage",
+      maxCount: 1,
+    },
+    {
+      name: "images",
+      maxCount: 6,
+    },
+  ]),
+  create
+);
 
 router.get("/", getAll);
 

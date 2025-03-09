@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+// import category from "./model.category";
 
 const productSchema = new mongoose.Schema(
   {
@@ -17,8 +18,13 @@ const productSchema = new mongoose.Schema(
       ref: "user",
       required: [true, "Author is required"],
     },
+    category: {
+      type: mongoose.Types.ObjectId,
+      ref: "category",
+      required: [true, "Author is required"],
+    },
     description: {
-      type: String,
+      type: mongoose.Types.ObjectId,
       required: false,
       min: [50, "description should be at least 50 character long"],
       trim: true,
@@ -27,6 +33,12 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    images: [
+      {
+        type: String,
+        require: false,
+      },
+    ],
   },
   { timestamps: true }
 );
