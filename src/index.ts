@@ -18,7 +18,9 @@ import path from "path";
 // routes of the code actual code written in this file
 import userRoutes from "./routes/user.routes";
 import productRoutes from "./routes/product.routes";
-import routercat from "./routes/category.routes";
+import categoryRoutes from "./routes/category.routes";
+import reviewRoutes from "./routes/review.routes";
+import cartRoutes from "./routes/cart.routes";
 
 const app = express();
 
@@ -42,7 +44,9 @@ console.log("~index.ts:23 ~ _dirname:", __dirname);
 // using routes
 app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes);
-app.use("/category", routercat);
+app.use("/category", categoryRoutes);
+app.use("/api/review", reviewRoutes);
+app.use("/api/cart", cartRoutes);
 
 // handle not found path
 app.all("*", (req: Request, res: Response, next: NextFunction) => {

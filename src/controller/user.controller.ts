@@ -2,7 +2,8 @@ import { Request, Response } from "express";
 import User from "../model/user.model";
 import { hash, compare } from "../utils/bcrypt";
 import { generateToken } from "../utils/jwt.utils";
-import { IPayload } from "../@types/jwt.interface";
+// import { IPayload } from "../@types/jwt.interface";
+import { IPayload } from "../@types/global.types";
 import { asyncHandler } from "../utils/asyncHandler.utils";
 import CustomError from "../middleware/errorHandler.middleware";
 
